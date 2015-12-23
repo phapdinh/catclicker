@@ -1,14 +1,17 @@
+<!DOCTYPE html>
 <html>
 <header>
+  <meta charset="UTF-8">
   <title>Cat Clicker</title>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </header>
 <body>
 <div id="catPic">
 <img id="cat" alt="cat">
-<h1>Sam</h1>
+<h1 class="cat1Name">Sam</h1>
 <p id="catCount"></p>
 <img id="cat2" alt="cat2">
-<h1>Harry</h1>
+<h1 class="cat2Name">Harry</h1>
 <p id="catCount2"></p>
 </div>
 <div id="catDiv">
@@ -19,7 +22,7 @@
   <img id="fifth" src="https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg" alt="cat5">
 </div>
 <script>
-
+$(function() {
 var catImage = document.getElementById('cat');
 var catImageTwo = document.getElementById('cat2');
 var catDiv = document.getElementById('catDiv');
@@ -51,7 +54,8 @@ catImageTwo.addEventListener('click', function(){
   var paraNodeTwo = document.getElementById("catCount2");
   paraNodeTwo.appendChild(nodeCountTwo);
 }, false);
-
+}
+)
 </script>
 </html>
 </body>
