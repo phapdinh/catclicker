@@ -95,20 +95,16 @@ $(function() {
 	
     this.catImage.addEventListener('click', function(){
       controller.incrementCounterFirst();
+	  var paraNode = document.getElementById("catCount");
+	  paraNode.textContent = controller.firstCatCount();
       console.log(controller.firstCatCount());
-      document.getElementById('catCount').innerHTML = '';
-      var nodeCount = document.createTextNode(controller.firstCatCount());
-      var paraNode = document.getElementById("catCount");
-      paraNode.appendChild(nodeCount);
     }, false);
 
     this.catImageTwo.addEventListener('click', function(){
       controller.incrementCounterSecond();
+	  var paraNodeTwo = document.getElementById("catCount2");
+	  paraNodeTwo.textContent = controller.secondCatCount();
       console.log(controller.secondCatCount());
-      document.getElementById('catCount2').innerHTML = '';
-      var nodeCountTwo = document.createTextNode(controller.secondCatCount());
-      var paraNodeTwo = document.getElementById("catCount2");
-      paraNodeTwo.appendChild(nodeCountTwo);
     }, false);
 	
   }
