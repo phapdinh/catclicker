@@ -4,58 +4,23 @@
   <meta charset="UTF-8">
   <title>Cat Clicker</title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="app.js"></script>
 </header>
 <body>
 <div id="catPic">
-<img id="cat" alt="cat">
-<h1 class="cat1Name">Sam</h1>
-<p id="catCount"></p>
-<img id="cat2" alt="cat2">
-<h1 class="cat2Name">Harry</h1>
-<p id="catCount2"></p>
+  <img id="cat_one" alt="cat">
+  <h1 id="cat1Name"></h1>
+  <p id="catCount"></p>
+  <img id="cat_two" alt="cat2">
+  <h1 id="cat2Name"></h1>
+  <p id="catCount2"></p>
 </div>
 <div id="catDiv">
-  <img id="first" src="https://lh3.ggpht.com/nlI91wYNCrjjNy5f-S3CmVehIBM4cprx-JFWOztLk7vFlhYuFR6YnxcT446AvxYg4Ab7M1Fy0twaOCWYcUk=s0#w=640&h=426" alt="cat">
-  <img id="second"src="https://lh3.ggpht.com/kixazxoJ2ufl3ACj2I85Xsy-Rfog97BM75ZiLaX02KgeYramAEqlEHqPC3rKqdQj4C1VFnXXryadFs1J9A=s0#w=640&h=496" alt="cat2">
-  <img id="third" src="https://lh5.ggpht.com/LfjkdmOKkGLvCt-VuRlWGjAjXqTBrPjRsokTNKBtCh8IFPRetGaXIpTQGE2e7ZCUaG2azKNkz38KkbM_emA=s0#w=640&h=454" alt="cat3">
-  <img id="fourth" src="https://www.petfinder.com/wp-content/uploads/2012/11/140272627-grooming-needs-senior-cat-632x475.jpg" alt="cat4">
-  <img id="fifth" src="https://pbs.twimg.com/profile_images/378800000532546226/dbe5f0727b69487016ffd67a6689e75a.jpeg" alt="cat5">
+  <img id="first" src="" alt="cat">
+  <img id="second" src="" alt="cat2">
+  <img id="third" src="" alt="cat3">
+  <img id="fourth" src="" alt="cat4">
+  <img id="fifth" src="" alt="cat5">
 </div>
-<script>
-$(function() {
-var catImage = document.getElementById('cat');
-var catImageTwo = document.getElementById('cat2');
-var catDiv = document.getElementById('catDiv');
-catDiv.addEventListener('click', function(event) {
-	if(catImage.src === '') {
-	  catImage.src = event.target.src;
-	}
-	else if(catImageTwo.src === '') {
-	  catImageTwo.src = event.target.src;
-	}
-},false);
-
-count = 0;
-catImage.addEventListener('click', function(){
-  count = count + 1;
-  console.log(count);
-  document.getElementById('catCount').innerHTML = '';
-  var nodeCount = document.createTextNode(count);
-  var paraNode = document.getElementById("catCount");
-  paraNode.appendChild(nodeCount);
-}, false);
-
-countTwo = 0;
-catImageTwo.addEventListener('click', function(){
-  countTwo = countTwo + 1;
-  console.log(countTwo);
-  document.getElementById('catCount2').innerHTML = '';
-  var nodeCountTwo = document.createTextNode(countTwo);
-  var paraNodeTwo = document.getElementById("catCount2");
-  paraNodeTwo.appendChild(nodeCountTwo);
-}, false);
-}
-)
-</script>
 </html>
 </body>
