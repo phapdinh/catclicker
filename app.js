@@ -83,11 +83,13 @@ $(function() {
 	          view.catImage.src = catCopy.url;
 			  view.catName.textContent = catCopy.name;
 			  controller.setFirstCat(catCopy);
+			  $("#" + catCopy.id).hide();
             }
             else if(view.catImageTwo.src === '') {			
 	          view.catImageTwo.src = catCopy.url;
 			  view.catNameTwo.textContent = catCopy.name;
 			  controller.setSecondCat(catCopy);
+			  $("#" + catCopy.id).hide();
 			}
           }
       })(cats[i]))
