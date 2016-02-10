@@ -59,6 +59,12 @@ $(function() {
 	},
 	secondCatCount: function() {
 	  return model.secondCat.count;
+	},
+	firstCatID: function() {
+	  return model.firstCat.id;
+	},
+	secondCatID: function() {
+	  return model.secondCat.id;
 	}
   }
   
@@ -68,12 +74,14 @@ $(function() {
     this.catImageTwo = document.getElementById('cat_two');
 	this.catName = document.getElementById('cat1Name');
 	this.catNameTwo = document.getElementById('cat2Name');
-	
+	this.firstCatClickCount = document.getElementById("catCount");
+	this.secondCatClickCount = document.getElementById("catCount2");
+	this.clearCat = document.getElementById('clearCat');
 	this.render();
   },
   render: function() {
 	var cats = controller.getCats();
-	
+
 	for (i = 0; i < cats.length; i++) {
       catClicked = document.getElementById(cats[i].id);
 	  catClicked.src = cats[i].url;
@@ -97,18 +105,28 @@ $(function() {
 	
     this.catImage.addEventListener('click', function(){
       controller.incrementCounterFirst();
-	  var paraNode = document.getElementById("catCount");
-	  paraNode.textContent = controller.firstCatCount();
+	  view.firstCatClickCount.textContent = controller.firstCatCount();
       console.log(controller.firstCatCount());
     }, false);
 
     this.catImageTwo.addEventListener('click', function(){
       controller.incrementCounterSecond();
-	  var paraNodeTwo = document.getElementById("catCount2");
-	  paraNodeTwo.textContent = controller.secondCatCount();
+	  view.secondCatClickCount.textContent = controller.secondCatCount();
       console.log(controller.secondCatCount());
     }, false);
 	
+	this.clearCat.addEventListener('click', function(){
+	  view.catImage.src = '';
+	  view.catName.textContent = '';
+	  view.firstCatClickCount.textContent = '';
+	  $('#' + controller.firstCatID()).show();
+	  controller.setFirstCat(null);
+	  view.catImageTwo.src = '';
+	  view.catNameTwo.textContent = '';
+	  view.secondCatClickCount.textContent = '';
+	  $('#' + controller.secondCatID()).show();
+	  controller.setSecondCat(null);
+	},false);
   }
   };
   controller.init();
