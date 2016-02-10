@@ -33,7 +33,7 @@ $(function() {
 	  id: "fifth"
     }
     ]
-    }
+  }
   
   var controller = {
     init: function() {
@@ -76,20 +76,20 @@ $(function() {
 	
 	for (i = 0; i < cats.length; i++) {
       catClicked = document.getElementById(cats[i].id);
-	  catClicked.src = cats[i].url
+	  catClicked.src = cats[i].url;
 	  catClicked.addEventListener('click', (function(catCopy) {
           return function() {
 			if(view.catImage.src === '') {
 	          view.catImage.src = catCopy.url;
 			  view.catName.textContent = catCopy.name;
 			  controller.setFirstCat(catCopy);
-			  $("#" + catCopy.id).hide();
+			  $('#' + catCopy.id).hide();
             }
             else if(view.catImageTwo.src === '') {			
 	          view.catImageTwo.src = catCopy.url;
 			  view.catNameTwo.textContent = catCopy.name;
 			  controller.setSecondCat(catCopy);
-			  $("#" + catCopy.id).hide();
+			  $('#' + catCopy.id).hide();
 			}
           }
       })(cats[i]))
