@@ -87,13 +87,13 @@ $(function() {
 	  catClicked.src = cats[i].url;
 	  catClicked.addEventListener('click', (function(catCopy) {
           return function() {
-			if(view.catImage.src === '') {
+			if(view.catImage.src === "") {
 	          view.catImage.src = catCopy.url;
 			  view.catName.textContent = catCopy.name;
 			  controller.setFirstCat(catCopy);
 			  $('#' + catCopy.id).hide();
             }
-            else if(view.catImageTwo.src === '') {			
+            else if(view.catImageTwo.src === "") {			
 	          view.catImageTwo.src = catCopy.url;
 			  view.catNameTwo.textContent = catCopy.name;
 			  controller.setSecondCat(catCopy);
@@ -116,16 +116,20 @@ $(function() {
     }, false);
 	
 	this.clearCat.addEventListener('click', function(){
-	  view.catImage.src = '';
-	  view.catName.textContent = '';
-	  view.firstCatClickCount.textContent = '';
-	  $('#' + controller.firstCatID()).show();
-	  controller.setFirstCat(null);
-	  view.catImageTwo.src = '';
-	  view.catNameTwo.textContent = '';
-	  view.secondCatClickCount.textContent = '';
-	  $('#' + controller.secondCatID()).show();
-	  controller.setSecondCat(null);
+	  view.catImage.src = "";
+	  console.log(view.catImage.src);
+	  view.catName.textContent = "";
+	  view.firstCatClickCount.textContent = "";
+	  if(model.firstCat !== null) {
+	    $('#' + controller.firstCatID()).show();
+	  }
+	  view.catImageTwo.src = "";
+	  console.log(view.catImageTwo.src);
+	  view.catNameTwo.textContent = "";
+	  view.secondCatClickCount.textContent = "";
+	  if(model.secondCat !== null) {
+	    $('#' + controller.secondCatID()).show();
+      }
 	},false);
   }
   };
