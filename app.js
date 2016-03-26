@@ -87,7 +87,7 @@ $(function() {
 	  catClicked.src = cats[i].url;
 	  catClicked.addEventListener('click', (function(catCopy) {
           return function() {
-			if(view.catImage.src.length === 0 || view.catImage.src.length === 80) {
+			if(view.catImage.src === "" || view.catImage.src.length === 80) {
 	          view.catImage.src = catCopy.url;
 			  view.catName.textContent = catCopy.name;
 			  controller.setFirstCat(catCopy);
