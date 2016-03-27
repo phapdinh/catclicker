@@ -88,13 +88,13 @@ $(function() {
 	  catClicked.src = cats[i].url;
 	  catClicked.addEventListener('click', (function(catCopy) {
           return function() {
-			if(view.catImage.src === "" || view.catImage.src.length === view.src.length) {
+			if(view.catImage.src === "" || view.catImage.src === view.src) {
 	          view.catImage.src = catCopy.url;
 			  view.catName.textContent = catCopy.name;
 			  controller.setFirstCat(catCopy);
 			  $('#' + catCopy.id).hide();
             }
-            else if(view.catImageTwo.src === "" || view.catImageTwo.src.length === view.src.length) {			
+            else if(view.catImageTwo.src === "" || view.catImageTwo.src === view.src) {			
 	          view.catImageTwo.src = catCopy.url;
 			  view.catNameTwo.textContent = catCopy.name;
 			  controller.setSecondCat(catCopy);
