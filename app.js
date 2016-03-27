@@ -78,6 +78,7 @@ $(function() {
 	this.secondCatClickCount = document.getElementById("catCount2");
 	this.clearCat = document.getElementById('clearCat');
 	this.render();
+	this.src = "";
   },
   render: function() {
 	var cats = controller.getCats();
@@ -87,13 +88,13 @@ $(function() {
 	  catClicked.src = cats[i].url;
 	  catClicked.addEventListener('click', (function(catCopy) {
           return function() {
-			if(view.catImage.src === "" || view.catImage.src.length === 80) {
+			if(view.catImage.src === "" || view.catImage.src.length === view.src.length) {
 	          view.catImage.src = catCopy.url;
 			  view.catName.textContent = catCopy.name;
 			  controller.setFirstCat(catCopy);
 			  $('#' + catCopy.id).hide();
             }
-            else if(view.catImageTwo.src === "" || view.catImageTwo.src.length === 80) {			
+            else if(view.catImageTwo.src === "" || view.catImageTwo.src.length === view.src.length) {			
 	          view.catImageTwo.src = catCopy.url;
 			  view.catNameTwo.textContent = catCopy.name;
 			  controller.setSecondCat(catCopy);
@@ -118,6 +119,7 @@ $(function() {
 	this.clearCat.addEventListener('click', function(){
 	  view.catImage.src = "";
 	  console.log(view.catImage.src.length);
+	  view.src = view.catImage.src;
 	  view.catName.textContent = "";
 	  view.firstCatClickCount.textContent = "";
 	  if(model.firstCat !== null) {
