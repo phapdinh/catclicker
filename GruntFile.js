@@ -7,13 +7,13 @@ module.exports = function(grunt) {
 		},
 		watch: {
 			scripts: {
-			files: ['./*.js'],
-			tasks: ['uglify']
+				files: ['./*.js'],
+				tasks: ['uglify']
 			}
 		}
 	});
 
     grunt.loadNpmTasks('grunt-contrib-uglify'); // load the given tasks
 	grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.registerTask('default', ['uglify']); // Default grunt tasks     
+    grunt.registerTask('default', ['uglify', 'watch']); // Default grunt tasks     
 };
