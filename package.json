@@ -19,6 +19,10 @@
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "browserify": "^13.1.0"
   }
 }
