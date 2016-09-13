@@ -10,10 +10,22 @@ module.exports = function(grunt) {
 				files: ['./*.js'],
 				tasks: ['uglify']
 			}
+		},
+		imagemin: {                          // Task
+			static: {                          // Target
+				options: {                       // Target options
+					optimizationLevel: 3
+				},
+				files: {                         // Dictionary of files
+					'2007VAIO_SS06.min.jpg': '2007VAIO_SS06.jpg', // 'destination': 'source'
+				}
+			}
 		}
 	});
 
     grunt.loadNpmTasks('grunt-contrib-uglify'); // load the given tasks
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.registerTask('minifyImage', 'imagemin');
     grunt.registerTask('default', ['uglify', 'watch']); // Default grunt tasks     
 };
