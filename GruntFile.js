@@ -26,6 +26,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify'); // load the given tasks
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.registerTask('minifyImage', 'imagemin');
     grunt.registerTask('default', ['uglify', 'watch']); // Default grunt tasks     
 };
