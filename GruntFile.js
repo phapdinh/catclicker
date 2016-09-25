@@ -20,6 +20,17 @@ module.exports = function(grunt) {
 					'2007VAIO_SS06.min.jpg': '2007VAIO_SS06.jpg', // 'destination': 'source'
 				}
 			}
+		},
+		cssmin: {
+			options: {
+				shorthandCompacting: false,
+				roundingPrecision: -1
+			},
+			target: {
+				files: {
+					'style.min.css': ['style.css']
+				}
+			}
 		}
 	});
 
