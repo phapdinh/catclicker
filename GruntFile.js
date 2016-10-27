@@ -38,6 +38,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.registerTask('minifyImage', 'imagemin');
 	grunt.registerTask('minifyCSS', 'cssmin');
     grunt.registerTask('default', ['uglify', 'watch']); // Default grunt tasks     
