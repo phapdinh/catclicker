@@ -1,4 +1,5 @@
 module.exports = function(grunt) {
+	require('load-grunt-tasks')(grunt);
     grunt.initConfig({
         uglify: {
 			my_target: {
@@ -41,11 +42,6 @@ module.exports = function(grunt) {
 		}
 	});
 
-    grunt.loadNpmTasks('grunt-contrib-uglify'); // load the given tasks
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-imagemin');
-	grunt.loadNpmTasks('grunt-contrib-cssmin');
-	grunt.loadNpmTasks('grunt-contrib-sass');
 	grunt.registerTask('minifyImage', 'imagemin');
 	grunt.registerTask('minifyCSS', 'cssmin');
     grunt.registerTask('default', ['uglify', 'watch']); // Default grunt tasks     
