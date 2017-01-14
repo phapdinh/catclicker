@@ -33,6 +33,9 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		jshint: {
+			all: ['Gruntfile.js', 'app.js']
+		},
 		sass: {
 			dist: {
 				files: {
@@ -44,5 +47,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('minifyImage', 'imagemin');
 	grunt.registerTask('minifyCSS', 'cssmin');
+	grunt.registerTask('test', 'jshint:all');
     grunt.registerTask('default', ['uglify', 'watch']); // Default grunt tasks     
 };

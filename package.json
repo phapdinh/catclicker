@@ -4,7 +4,7 @@
   "description": "How to Start the Game\r 1. Have a browser that can handle modern jquery\r 2. Run the index.html file in browser",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
