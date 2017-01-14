@@ -18,7 +18,7 @@ module.exports = function(grunt) {
 					optimizationLevel: 3
 				},
 				files: {                         // Dictionary of files
-					'2007VAIO_SS06.min.jpg': '2007VAIO_SS06.jpg', // 'destination': 'source'
+					'images/2007VAIO_SS06.min.jpg': 'images/2007VAIO_SS06.jpg', // 'destination': 'source'
 				}
 			}
 		},
