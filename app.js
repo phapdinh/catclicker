@@ -66,7 +66,7 @@ $(function() {
 	secondCatID: function() {
 	  return model.secondCat.id;
 	}
-  }
+  };
   
   var view = {
   init: function() {
@@ -81,27 +81,28 @@ $(function() {
 	this.src = "";
   },
   render: function() {
-	var cats = controller.getCats();
+	var cats = controller.getCats(),
+		catFunc = function(catCopy) {
+			return function() {
+				if(view.catImage.src === "" || view.catImage.src === view.src) {
+					view.catImage.src = catCopy.url;
+					view.catName.textContent = catCopy.name;
+					controller.setFirstCat(catCopy);
+					$('#' + catCopy.id).hide();
+				}
+				else if(view.catImageTwo.src === "" || view.catImageTwo.src === view.src) {			
+					view.catImageTwo.src = catCopy.url;
+					view.catNameTwo.textContent = catCopy.name;
+					controller.setSecondCat(catCopy);
+					$('#' + catCopy.id).hide();
+				}
+			};
+		};
 
 	for (i = 0; i < cats.length; i++) {
       catClicked = document.getElementById(cats[i].id);
 	  catClicked.src = cats[i].url;
-	  catClicked.addEventListener('click', (function(catCopy) {
-          return function() {
-			if(view.catImage.src === "" || view.catImage.src === view.src) {
-	          view.catImage.src = catCopy.url;
-			  view.catName.textContent = catCopy.name;
-			  controller.setFirstCat(catCopy);
-			  $('#' + catCopy.id).hide();
-            }
-            else if(view.catImageTwo.src === "" || view.catImageTwo.src === view.src) {			
-	          view.catImageTwo.src = catCopy.url;
-			  view.catNameTwo.textContent = catCopy.name;
-			  controller.setSecondCat(catCopy);
-			  $('#' + catCopy.id).hide();
-			}
-          }
-      })(cats[i]))
+	  catClicked.addEventListener('click', catFunc(cats[i]));
 	}
 	
     this.catImage.addEventListener('click', function(){
@@ -137,4 +138,4 @@ $(function() {
   };
   controller.init();
 }
-)
+);
